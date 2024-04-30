@@ -3,9 +3,9 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .infrastructure.docs.openapi_tags import openapi_tags
-from .infrastructure.routers.auth_router import auth_router
-from .infrastructure.routers.management_router import management_router
+from .v1.infrastructure.docs.openapi_tags import openapi_tags
+from .v1.infrastructure.routers.auth_router import auth_router
+from .v1.infrastructure.routers.management_router import management_router
 
 load_dotenv()
 
@@ -20,8 +20,8 @@ app = FastAPI(
     openapi_tags=openapi_tags,
 )
 
-app.include_router(auth_router, prefix="/auth", tags=["Authorization"])
-app.include_router(management_router, prefix="/management", tags=["Management"])
+app.include_router(auth_router, prefix="/v1/auth", tags=["Authorization"])
+app.include_router(management_router, prefix="/v1/management", tags=["Management"])
 
 app.add_middleware(
     CORSMiddleware,

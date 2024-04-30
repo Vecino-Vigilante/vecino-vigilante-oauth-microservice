@@ -2,12 +2,12 @@ from jose import JWTError
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
 
-from app.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
-from app.infrastructure.repositories.relational_database_user_repository_impl import (
+from app.v1.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
+from app.v1.infrastructure.repositories.relational_database_user_repository_impl import (
     RelationalDatabaseUserRepositoryImpl,
 )
-from app.infrastructure.security.security_scheme import SECURITY_SCHEME
-from app.infrastructure.security.json_web_token_tools import JsonWebTokenTools
+from app.v1.infrastructure.security.security_scheme import SECURITY_SCHEME
+from app.v1.infrastructure.security.json_web_token_tools import JsonWebTokenTools
 
 
 async def protect_route_middlware(token: Annotated[str, Depends(SECURITY_SCHEME)]):

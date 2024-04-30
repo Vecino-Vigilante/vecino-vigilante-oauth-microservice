@@ -2,27 +2,27 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 
-from app.application.services.auth_service import AuthService
-from app.domain.exceptions.conflict_with_existing_resource_exception import (
+from app.v1.application.services.auth_service import AuthService
+from app.v1.domain.exceptions.conflict_with_existing_resource_exception import (
     ConflictWithExistingResourceException,
 )
-from app.domain.exceptions.invalid_credentials_exception import (
+from app.v1.domain.exceptions.invalid_credentials_exception import (
     InvalidCredentialsException,
 )
-from app.infrastructure.dto.bearer_token_dto import BearerTokenDTO
-from app.infrastructure.dto.candidate_dto import CandidateDTO
-from app.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
-from app.infrastructure.mappers.candidate_mappers import (
+from app.v1.infrastructure.dto.bearer_token_dto import BearerTokenDTO
+from app.v1.infrastructure.dto.candidate_dto import CandidateDTO
+from app.v1.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
+from app.v1.infrastructure.mappers.candidate_mappers import (
     map_candidate_dto_to_candidate_model,
 )
-from app.infrastructure.mappers.user_mappers import map_user_model_to_user_logged_dto
-from app.infrastructure.repositories.relational_database_user_repository_impl import (
+from app.v1.infrastructure.mappers.user_mappers import map_user_model_to_user_logged_dto
+from app.v1.infrastructure.repositories.relational_database_user_repository_impl import (
     RelationalDatabaseUserRepositoryImpl,
 )
-from app.infrastructure.security.bcrypt_password_encryptor_impl import (
+from app.v1.infrastructure.security.bcrypt_password_encryptor_impl import (
     BcryptPasswordEncryptorImpl,
 )
-from app.infrastructure.security.json_web_token_tools import JsonWebTokenTools
+from app.v1.infrastructure.security.json_web_token_tools import JsonWebTokenTools
 
 
 auth_router = APIRouter()

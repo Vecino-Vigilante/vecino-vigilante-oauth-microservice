@@ -1,10 +1,10 @@
 from sqlmodel import Session, select
 
-from app.application.repositories.user_repository import UserRepository
-from app.domain.models.user_model import UserModel
-from app.infrastructure.configs.sql_database import db_engine
-from app.infrastructure.entities.user_entity import User
-from app.infrastructure.mappers.user_mappers import (
+from app.v1.application.repositories.user_repository import UserRepository
+from app.v1.domain.models.user_model import UserModel
+from app.v1.infrastructure.configs.sql_database import db_engine
+from app.v1.infrastructure.entities.user_entity import User
+from app.v1.infrastructure.mappers.user_mappers import (
     map_user_entity_to_user_model,
     map_user_model_to_user_entity,
 )

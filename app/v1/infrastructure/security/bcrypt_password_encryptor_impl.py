@@ -1,6 +1,6 @@
 from passlib.context import CryptContext
 
-from app.application.security.password_encryptor import PasswordEncryptor
+from app.v1.application.security.password_encryptor import PasswordEncryptor
 
 
 class BcryptPasswordEncryptorImpl(PasswordEncryptor):

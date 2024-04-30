@@ -1,11 +1,15 @@
 FROM python:3.11
 
-WORKDIR /app
+WORKDIR /oauth-microservice
 
-COPY ./requirements.txt /app
+COPY ./requirements.txt .
 
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-COPY /app /app
+COPY /app app
 
-ENTRYPOINT ["uvicorn", "app.main:app"]
+COPY .env .
+
+EXPOSE 8000
+
+ENTRYPOINT ["uvicorn", "--host", "0.0.0.0", "app.main:app"]

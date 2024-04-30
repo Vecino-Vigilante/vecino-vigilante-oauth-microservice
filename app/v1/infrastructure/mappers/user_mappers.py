@@ -1,6 +1,6 @@
-from app.domain.models.user_model import UserModel
-from app.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
-from app.infrastructure.entities.user_entity import User
+from app.v1.domain.models.user_model import UserModel
+from app.v1.infrastructure.dto.authenticated_user_dto import AuthenticatedUserDTO
+from app.v1.infrastructure.entities.user_entity import User
 
 
 def map_user_entity_to_user_model(user_entity: User) -> UserModel:

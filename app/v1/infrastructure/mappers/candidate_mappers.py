@@ -1,6 +1,6 @@
 from pydantic import SecretStr
-from app.domain.models.candidate_model import CandidateModel
-from app.infrastructure.dto.candidate_dto import CandidateDTO
+from app.v1.domain.models.candidate_model import CandidateModel
+from app.v1.infrastructure.dto.candidate_dto import CandidateDTO
 
 
 def map_candidate_dto_to_candidate_model(candidate_dto: CandidateDTO) -> CandidateModel:

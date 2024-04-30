@@ -1,13 +1,13 @@
-from app.application.repositories.user_repository import UserRepository
-from app.application.security.password_encryptor import PasswordEncryptor
-from app.domain.exceptions.conflict_with_existing_resource_exception import (
+from app.v1.application.repositories.user_repository import UserRepository
+from app.v1.application.security.password_encryptor import PasswordEncryptor
+from app.v1.domain.exceptions.conflict_with_existing_resource_exception import (
     ConflictWithExistingResourceException,
 )
-from app.domain.exceptions.invalid_credentials_exception import (
+from app.v1.domain.exceptions.invalid_credentials_exception import (
     InvalidCredentialsException,
 )
-from app.domain.models.candidate_model import CandidateModel
-from app.domain.models.user_model import UserModel
+from app.v1.domain.models.candidate_model import CandidateModel
+from app.v1.domain.models.user_model import UserModel
 
 
 class AuthService:

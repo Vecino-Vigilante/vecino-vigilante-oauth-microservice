@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status
 
-from app.infrastructure.dto.microservice_info_dto import MicroserviceInfoDTO
+from app.v1.infrastructure.dto.microservice_info_dto import MicroserviceInfoDTO
 
 management_router = APIRouter()
 

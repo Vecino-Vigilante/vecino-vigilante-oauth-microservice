@@ -1,4 +1,4 @@
-from app.domain.models.user_model import UserModel
+from app.v1.domain.models.user_model import UserModel
 
 
 class UserRepository:
